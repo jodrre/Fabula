@@ -8,22 +8,30 @@ Joomla has a nifty way to do that. Take a look at how they do it.
 <?php
 require "inc/conf.php";
 include "inc/frontpage.php";
+
+if(isset($_COOKIE['ID_your_site'])) {
+    $user_login_status = 1;
+}
+else $user_login_status = 0;
+
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title><?php echo $site_name ?> - Home</title>
     </head>
     <body>
         <?php
+        echo '<img src="'.$site_logo.'"><br />';
         If ($user_login_status == 0) {
             echo "Please log in to continue.<p />";
             // Can this be done with DIV code?
-            echo $siteform_login;
-// I want the company logo to display here. Need a default image holder first.            
-//echo $site_company_logo;
+        echo $siteform_login;
         }
 
+if ($user_login_status == 1) {
+    echo "Hello, ".$user_fullname."!";
+}
         ?>
     </body>
 </html>
