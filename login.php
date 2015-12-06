@@ -95,7 +95,7 @@ else{
 
  <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post"> 
 
- <table border="0"> 
+ <table> 
 
  <tr><td colspan=2><h1>Login</h1></td></tr> 
 
